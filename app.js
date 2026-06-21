@@ -109,13 +109,7 @@ function initMaps() {
 
   ['pangyo', 'cheongna'].forEach(dist => {
     const tileLayer = L.tileLayer(vworldUrl, {
-      maxZoom: 18,
-      errorTileUrl: 'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png'
-    });
-
-    tileLayer.on('tileerror', (error) => {
-      console.warn(`VWorld tile loading error on ${dist} map.`, error);
-      showMapError(dist, 'VWorld 타일을 로드할 수 없습니다. API 인증키가 만료되었거나 올바르지 않은 키가 입력되었습니다. 콘솔 로그를 확인해주세요.');
+      maxZoom: 18
     });
 
     tileLayer.addTo(state.maps[dist]);
@@ -392,58 +386,90 @@ function switchTab(tabId) {
 }
 
 /**
- * Helper to compute Convex Hull points from cached Dijkstra
+ * Compute isochrone polygon from pre-computed Dijkstra routing results.
+ * Uses Turf.js for convex hull generation, with bbox fallback.
  */
 function computeIsochronePolygon(dist, maxSeconds) {
-  const distArray = state.routingResults[dist];
-  if (!distArray || !state.subwayNodes) return null;
+  try {
+    const distArray = state.routingResults[dist];
+    if (!distArray || !state.subwayNodes) return null;
 
-  const points = [];
-  distArray.forEach((time, nodeId) => {
-    if (time <= maxSeconds) {
-      const node = state.subwayNodes[nodeId];
-      if (node && node.lng && node.lat) {
-        points.push({ lat: node.lat, lng: node.lng });
+    const geoPoints = [];
+    distArray.forEach((time, nodeId) => {
+      if (time <= maxSeconds) {
+        const node = state.subwayNodes[nodeId];
+        if (node && node.lng && node.lat) {
+          geoPoints.push(turf.point([node.lng, node.lat]));
+        }
       }
-    }
-  });
+    });
 
-  if (points.length < 3) return null;
-  return window.GISRouting.grahamScan(points);
+    if (geoPoints.length < 3) return null;
+
+    const fc = turf.featureCollection(geoPoints);
+
+    // Try convex hull first
+    let hull = turf.convex(fc);
+    if (hull) return convertTurfToLatLng(hull);
+
+    // Fallback: bounding box polygon
+    console.warn(`[POLYGON] convex failed for ${dist}/${maxSeconds}s, using bbox fallback`);
+    const bbox = turf.bbox(fc);
+    hull = turf.bboxPolygon(bbox);
+    if (hull) return convertTurfToLatLng(hull);
+
+    return null;
+  } catch (e) {
+    console.warn(`[POLYGON] computeIsochronePolygon error for ${dist}/${maxSeconds}s:`, e);
+    return null;
+  }
 }
 
 /**
- * Draws cached Dijkstra boundaries (15m: solid shade, 30m: dotted)
+ * Convert Turf Polygon coordinates to Leaflet [lat, lng][] format
+ */
+function convertTurfToLatLng(turfPolygon) {
+  const coords = turfPolygon.geometry.coordinates[0];
+  return coords.map(c => [c[1], c[0]]);
+}
+
+/**
+ * Draws cached Dijkstra boundaries (15m: solid shade, 30m: dotted).
+ * Skips silently if polygon generation fails — never blocks the app.
  */
 function drawDijkstraPolygons(dist) {
-  const isPangyo = dist === 'pangyo';
-  
-  // 15-minute contour (900 seconds)
-  const coords15 = computeIsochronePolygon(dist, 900);
-  if (coords15) {
-    state.layers[dist].poly15 = L.polygon(coords15, {
-      color: isPangyo ? '#00e5ff' : '#ff9100',
-      weight: 1.5,
-      opacity: 0.85,
-      fillColor: isPangyo ? '#00e5ff' : '#ff9100',
-      fillOpacity: 0.28,
-      smoothFactor: 1.2
-    }).addTo(state.maps[dist])
-      .bindTooltip(`<strong>${isPangyo ? '판교' : '청라'} 15분 도보 접근권 (Dijkstra)</strong>`, { className: 'leaflet-tooltip-custom', sticky: true });
-  }
+  try {
+    const isPangyo = dist === 'pangyo';
 
-  // 30-minute contour (1800 seconds)
-  const coords30 = computeIsochronePolygon(dist, 1800);
-  if (coords30) {
-    state.layers[dist].poly30 = L.polygon(coords30, {
-      color: isPangyo ? '#00d2ff' : '#ff9100',
-      weight: 2.5,
-      opacity: 0.95,
-      fillColor: 'transparent',
-      dashArray: '5, 8',
-      smoothFactor: 1.2
-    }).addTo(state.maps[dist])
-      .bindTooltip(`<strong>${isPangyo ? '판교' : '청라'} 30분 대중교통 접근권 (Dijkstra)</strong>`, { className: 'leaflet-tooltip-custom', sticky: true });
+    // 15-minute contour (900 seconds)
+    const coords15 = computeIsochronePolygon(dist, 900);
+    if (coords15) {
+      state.layers[dist].poly15 = L.polygon(coords15, {
+        color: isPangyo ? '#00e5ff' : '#ff9100',
+        weight: 1.5,
+        opacity: 0.85,
+        fillColor: isPangyo ? '#00e5ff' : '#ff9100',
+        fillOpacity: 0.28,
+        smoothFactor: 1.2
+      }).addTo(state.maps[dist])
+        .bindTooltip(`<strong>${isPangyo ? '판교' : '청라'} 15분 접근권 (Dijkstra)</strong>`, { className: 'leaflet-tooltip-custom', sticky: true });
+    }
+
+    // 30-minute contour (1800 seconds)
+    const coords30 = computeIsochronePolygon(dist, 1800);
+    if (coords30) {
+      state.layers[dist].poly30 = L.polygon(coords30, {
+        color: isPangyo ? '#00d2ff' : '#ff9100',
+        weight: 2.5,
+        opacity: 0.95,
+        fillColor: 'transparent',
+        dashArray: '5, 8',
+        smoothFactor: 1.2
+      }).addTo(state.maps[dist])
+        .bindTooltip(`<strong>${isPangyo ? '판교' : '청라'} 30분 접근권 (Dijkstra)</strong>`, { className: 'leaflet-tooltip-custom', sticky: true });
+    }
+  } catch (e) {
+    console.warn(`[POLYGON] drawDijkstraPolygons error for ${dist}:`, e);
   }
 }
 
