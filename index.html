@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pangyo vs Cheongna Spatial Analysis Platform</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Lucide Icons for premium UI look -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dark-theme">
+
+  <!-- Header -->
+  <header class="app-header">
+    <div class="header-left">
+      <i data-lucide="globe-2" class="header-icon"></i>
+      <h1>도시 공간분석 플랫폼 <span class="subtitle">판교테크노밸리 vs 청라국제업무지구 비교분석</span></h1>
+    </div>
+    
+    <!-- Tab Navigation -->
+    <nav class="tab-navigation">
+      <button class="tab-btn active" data-tab="tab-core">
+        <i data-lucide="grid"></i> 핵심 비교
+      </button>
+      <button class="tab-btn" data-tab="tab-spatial">
+        <i data-lucide="map"></i> 공간 비교 (등시간)
+      </button>
+      <button class="tab-btn" data-tab="tab-landuse">
+        <i data-lucide="building-2"></i> 토지이용
+      </button>
+      <button class="tab-btn" data-tab="tab-traffic">
+        <i data-lucide="train"></i> 교통 접근성
+      </button>
+      <button class="tab-btn" data-tab="tab-industry">
+        <i data-lucide="bar-chart-3"></i> 인구산업
+      </button>
+    </nav>
+  </header>
+
+  <main class="dashboard-container">
+    
+    <!-- Top KPI Cards Area -->
+    <section class="kpi-section">
+      <!-- KPI 1: Population -->
+      <div class="kpi-card" id="kpi-population">
+        <div class="kpi-card-header">
+          <span class="kpi-title">총인구</span>
+          <i data-lucide="users" class="kpi-icon"></i>
+        </div>
+        <div class="kpi-values">
+          <div class="kpi-val pangyo-val">
+            <span class="label">판교</span>
+            <span class="number" id="val-pangyo-pop">-</span>
+          </div>
+          <div class="kpi-divider"></div>
+          <div class="kpi-val cheongna-val">
+            <span class="label">청라</span>
+            <span class="number" id="val-cheongna-pop">-</span>
+          </div>
+        </div>
+        <div class="kpi-footer-ratio">
+          <span>인구비(판교/청라): <strong id="ratio-pop">-</strong></span>
+        </div>
+      </div>
+
+      <!-- KPI 2: Workers -->
+      <div class="kpi-card" id="kpi-workers">
+        <div class="kpi-card-header">
+          <span class="kpi-title">총종사자</span>
+          <i data-lucide="briefcase" class="kpi-icon"></i>
+        </div>
+        <div class="kpi-values">
+          <div class="kpi-val pangyo-val">
+            <span class="label">판교</span>
+            <span class="number" id="val-pangyo-workers">-</span>
+          </div>
+          <div class="kpi-divider"></div>
+          <div class="kpi-val cheongna-val">
+            <span class="label">청라</span>
+            <span class="number" id="val-cheongna-workers">-</span>
+          </div>
+        </div>
+        <div class="kpi-footer-ratio">
+          <span>종사자비(판교/청라): <strong id="ratio-workers" class="highlight-cyan">-</strong></span>
+        </div>
+      </div>
+
+      <!-- KPI 3: Total Buildings -->
+      <div class="kpi-card" id="kpi-buildings">
+        <div class="kpi-card-header">
+          <span class="kpi-title">총사업체수 / 건물수</span>
+          <i data-lucide="landmark" class="kpi-icon"></i>
+        </div>
+        <div class="kpi-values">
+          <div class="kpi-val pangyo-val">
+            <span class="label">판교</span>
+            <span class="number" id="val-pangyo-buildings">-</span>
+          </div>
+          <div class="kpi-divider"></div>
+          <div class="kpi-val cheongna-val">
+            <span class="label">청라</span>
+            <span class="number" id="val-cheongna-buildings">-</span>
+          </div>
+        </div>
+        <div class="kpi-footer-ratio">
+          <span>업무용 건물수: <span id="val-pangyo-office-bldgs" class="cyan-text">-</span> vs <span id="val-cheongna-office-bldgs" class="amber-text">-</span></span>
+        </div>
+      </div>
+
+      <!-- KPI 4: Total Floor Area -->
+      <div class="kpi-card" id="kpi-floor-area">
+        <div class="kpi-card-header">
+          <span class="kpi-title">총연면적</span>
+          <i data-lucide="layers" class="kpi-icon"></i>
+        </div>
+        <div class="kpi-values">
+          <div class="kpi-val pangyo-val">
+            <span class="label">판교</span>
+            <span class="number" id="val-pangyo-floor">-</span>
+          </div>
+          <div class="kpi-divider"></div>
+          <div class="kpi-val cheongna-val">
+            <span class="label">청라</span>
+            <span class="number" id="val-cheongna-floor">-</span>
+          </div>
+        </div>
+        <div class="kpi-footer-ratio">
+          <span>연면적비: <strong id="ratio-floor">-</strong></span>
+        </div>
+      </div>
+
+      <!-- KPI 5: Avg Floor Area Ratio -->
+      <div class="kpi-card" id="kpi-far">
+        <div class="kpi-card-header">
+          <span class="kpi-title">평균 용적률</span>
+          <i data-lucide="arrow-up-right" class="kpi-icon"></i>
+        </div>
+        <div class="kpi-values">
+          <div class="kpi-val pangyo-val">
+            <span class="label">판교</span>
+            <span class="number" id="val-pangyo-far">-</span>
+          </div>
+          <div class="kpi-divider"></div>
+          <div class="kpi-val cheongna-val">
+            <span class="label">청라</span>
+            <span class="number" id="val-cheongna-far">-</span>
+          </div>
+        </div>
+        <div class="kpi-footer-ratio">
+          <span>개발밀도 차이: <strong id="diff-far" class="highlight-cyan">-</strong></span>
+        </div>
+      </div>
+
+      <!-- KPI 6: Jobs-Housing Ratio -->
+      <div class="kpi-card" id="kpi-jobs-housing">
+        <div class="kpi-card-header">
+          <span class="kpi-title">직주비 (종사자/인구)</span>
+          <i data-lucide="git-pull-request" class="kpi-icon"></i>
+        </div>
+        <div class="kpi-values">
+          <div class="kpi-val pangyo-val">
+            <span class="label">판교</span>
+            <span class="number" id="val-pangyo-jhr">-</span>
+          </div>
+          <div class="kpi-divider"></div>
+          <div class="kpi-val cheongna-val">
+            <span class="label">청라</span>
+            <span class="number" id="val-cheongna-jhr">-</span>
+          </div>
+        </div>
+        <div class="kpi-footer-ratio">
+          <span id="jhr-description">-</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Maps Area (2-Split Map Grid) -->
+    <section class="maps-section">
+      <!-- Loading HUD Overlay -->
+      <div class="map-loading-overlay" id="map-loading-hud">
+        <i data-lucide="loader-2" class="spinner-icon"></i>
+        <div class="loading-text" id="loading-status-text">시스템 초기화 중...</div>
+        <div class="loading-progress-container">
+          <div class="loading-progress-bar" id="loading-progress-bar" style="width: 0%;"></div>
+        </div>
+        <div class="loading-progress-percent" id="loading-progress-percent">0%</div>
+      </div>
+
+      <!-- Left Map: Pangyo -->
+      <div class="map-wrapper" id="pangyo-wrapper">
+        <div class="map-badge badge-pangyo">
+          <div class="badge-dot"></div>
+          <span>판교테크노밸리 (Pangyo)</span>
+        </div>
+        <div id="map-pangyo" class="map-container"></div>
+        <div class="map-controls">
+          <button class="map-ctrl-btn reset-view-btn" data-target="pangyo" title="위치 초기화">
+            <i data-lucide="maximize-2"></i>
+          </button>
+          <button class="map-ctrl-btn fullscreen-btn" data-target="pangyo" title="전체화면 토글">
+            <i data-lucide="expand"></i>
+          </button>
+        </div>
+        <div class="map-analysis-overlay" id="analysis-overlay-pangyo">
+          <span>분석 기준: 판교테크노밸리 업무지구 중심 30분 접근권</span>
+        </div>
+      </div>
+
+      <!-- Right Map: Cheongna -->
+      <div class="map-wrapper" id="cheongna-wrapper">
+        <div class="map-badge badge-cheongna">
+          <div class="badge-dot"></div>
+          <span>청라국제업무지구 (Cheongna)</span>
+        </div>
+        <div id="map-cheongna" class="map-container"></div>
+        <div class="map-controls">
+          <button class="map-ctrl-btn reset-view-btn" data-target="cheongna" title="위치 초기화">
+            <i data-lucide="maximize-2"></i>
+          </button>
+          <button class="map-ctrl-btn fullscreen-btn" data-target="cheongna" title="전체화면 토글">
+            <i data-lucide="expand"></i>
+          </button>
+        </div>
+        <div class="map-analysis-overlay" id="analysis-overlay-cheongna">
+          <span>분석 기준: 청라국제업무지구 중심 30분 접근권</span>
+        </div>
+      </div>
+      
+      <!-- Shared Map Legend overlay -->
+      <div class="map-legend-overlay" id="map-legend">
+        <div class="legend-header">범례 (Legend)</div>
+        <div class="legend-body" id="legend-content">
+          <!-- Dynamic contents loaded by JS -->
+        </div>
+      </div>
+      
+      <!-- Sync Status Indicator -->
+      <div class="map-sync-indicator disabled" id="sync-indicator">
+        <i data-lucide="link-2"></i> <span>동기화 해제 (Sync OFF)</span>
+      </div>
+    </section>
+
+    <!-- Bottom Panels Area -->
+    <section class="analysis-section">
+      <!-- Left panel: Visual charts -->
+      <div class="panel-card chart-panel">
+        <div class="panel-header">
+          <h2 id="chart-panel-title">분석 지표 시각화</h2>
+          <span class="panel-subtitle">차트형 비교 분석</span>
+        </div>
+        <div class="panel-body chart-container-wrapper">
+          <div class="chart-box">
+            <canvas id="analysisChart1"></canvas>
+          </div>
+          <div class="chart-box">
+            <canvas id="analysisChart2"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right panel: Text / Table comparisons -->
+      <div class="panel-card detail-panel">
+        <div class="panel-header">
+          <h2>공간 분석 리포트</h2>
+          <span class="panel-subtitle" id="detail-panel-subtitle">구조적 요인 비교</span>
+        </div>
+        <div class="panel-body scrollable" id="detail-panel-content">
+          <!-- Dynamic Content generated based on current Tab -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Premium Banner / Quick Summary for Prof (10 Seconds Rule) -->
+  <footer class="app-footer-banner">
+    <div class="summary-key-takeaway">
+      <span class="takeaway-label"><i data-lucide="lightbulb" class="bulb-icon"></i> 10초 요약:</span>
+      <span class="takeaway-text">
+        <strong>판교</strong>는 경강선/신분당선을 축으로 <strong>30분 내 124만 명</strong>, <strong>60분 내 283만 명</strong>의 노동인구에 도달하여, 
+        청라(30분 내 43만 명 / 60분 내 115만 명) 대비 <strong>약 2.5~3배 넓은 광역 노동시장에 접근</strong>이 가능합니다. 
+        이것이 두 업무지구의 극적인 밀도(평균 용적률 486% vs 218%)와 직주비(1.17 vs 0.58) 차이를 만든 핵심 공간요인입니다.
+      </span>
+    </div>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <!-- Leaflet Sync Plugin (for synchronizing map movement) -->
+  <script src="https://unpkg.com/leaflet.sync/L.Map.Sync.js"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Routing logic -->
+  <script src="js/routing.js"></script>
+
+  <!-- App logic -->
+  <script src="app.js"></script>
+</body>
+</html>
