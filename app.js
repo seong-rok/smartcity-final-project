@@ -3,6 +3,9 @@
  * Client Application Logic (Optimized for Progressive Rendering, Caching, and Debugging)
  */
 
+// VWorld API Key (hardcoded for GitHub Pages static deployment)
+const VWORLD_API_KEY = "D77E804B-483A-3813-86D6-8FDA9DD770B4";
+
 // Global App State
 const state = {
   stats: null,
@@ -18,7 +21,7 @@ const state = {
     cheongna: null
   },
   currentTab: 'tab-core',
-  vworldApiKey: '',
+  vworldApiKey: VWORLD_API_KEY,
   maps: {
     pangyo: null,
     cheongna: null
@@ -49,14 +52,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
   initDefaultReport();
 
-  // 3. Fetch API Key Config
-  await fetchConfig();
-
-  // 4. Initialize Leaflet Maps (Step 1 of Progressive Rendering)
+  // 3. Initialize Leaflet Maps (Step 1 of Progressive Rendering)
   initMaps();
   updateProgress("배경 지도 표시 완료...", 10);
 
-  // 5. Start Progressive Data Loader Pipeline
+  // 4. Start Progressive Data Loader Pipeline
   runProgressiveLoader();
 });
 
@@ -88,20 +88,6 @@ function hideLoadingHUD() {
 }
 
 /**
- * Fetch VWorld API key from Node.js server
- */
-async function fetchConfig() {
-  try {
-    const res = await fetch('/api/config');
-    const data = await res.json();
-    state.vworldApiKey = data.vworldApiKey || '';
-  } catch (error) {
-    console.error('Failed to load VWorld configuration:', error);
-    state.vworldApiKey = '';
-  }
-}
-
-/**
  * Initialize Leaflet Map Instances (Step 1)
  */
 function initMaps() {
@@ -117,13 +103,6 @@ function initMaps() {
   state.maps.cheongna = L.map('map-cheongna', mapOptions).setView([37.525, 126.635], 14.5);
 
   const apiKey = state.vworldApiKey;
-
-  if (!apiKey || apiKey.trim() === '') {
-    console.error('VWorld API key is missing. Please set VITE_VWORLD_API_KEY in the .env file.');
-    showMapError('pangyo', 'VWorld API 인증키가 필요합니다. 프로젝트 루트에 .env 파일을 만들고 VITE_VWORLD_API_KEY 값을 설정해주세요.');
-    showMapError('cheongna', 'VWorld API 인증키가 필요합니다. 프로젝트 루트에 .env 파일을 만들고 VITE_VWORLD_API_KEY 값을 설정해주세요.');
-    return;
-  }
 
   // Load VWorld Base Map on both maps (Color Version)
   const vworldUrl = `https://api.vworld.kr/req/wmts/1.0.0/${apiKey}/Base/{z}/{y}/{x}.png`;
