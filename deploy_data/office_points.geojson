@@ -1,0 +1,126 @@
+{
+  "type": "FeatureCollection",
+  "name": "sample_office_points",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "pangyo",
+        "name": "판교 업무시설 A",
+        "workers": 12400
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.105,
+          37.401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "pangyo",
+        "name": "판교 업무시설 B",
+        "workers": 9300
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.113,
+          37.399
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "pangyo",
+        "name": "판교 업무시설 C",
+        "workers": 7800
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.098,
+          37.39
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "pangyo",
+        "name": "판교 업무시설 D",
+        "workers": 6500
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.12,
+          37.388
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "cheongna",
+        "name": "청라 업무시설 A",
+        "workers": 4600
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.628,
+          37.532
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "cheongna",
+        "name": "청라 업무시설 B",
+        "workers": 3500
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.64,
+          37.521
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "cheongna",
+        "name": "청라 업무시설 C",
+        "workers": 2800
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.616,
+          37.511
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "cheongna",
+        "name": "청라 업무시설 D",
+        "workers": 2200
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.653,
+          37.539
+        ]
+      }
+    }
+  ]
+}

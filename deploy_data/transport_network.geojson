@@ -1,0 +1,234 @@
+{
+  "type": "FeatureCollection",
+  "name": "sample_transport_network",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "pangyo",
+        "kind": "line",
+        "name": "신분당선 샘플 노선",
+        "color": "#c6202f"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.091,
+            37.358
+          ],
+          [
+            127.101,
+            37.382
+          ],
+          [
+            127.111,
+            37.395
+          ],
+          [
+            127.118,
+            37.411
+          ],
+          [
+            127.126,
+            37.432
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "pangyo",
+        "kind": "line",
+        "name": "경강선 샘플 노선",
+        "color": "#2356b8"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.064,
+            37.39
+          ],
+          [
+            127.089,
+            37.394
+          ],
+          [
+            127.111,
+            37.395
+          ],
+          [
+            127.138,
+            37.397
+          ],
+          [
+            127.16,
+            37.401
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "pangyo",
+        "kind": "station",
+        "name": "판교역",
+        "ridership": 88000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.111,
+          37.395
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "pangyo",
+        "kind": "station",
+        "name": "서현역",
+        "ridership": 63000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.123,
+          37.385
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "pangyo",
+        "kind": "station",
+        "name": "정자역",
+        "ridership": 71000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.108,
+          37.367
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "cheongna",
+        "kind": "line",
+        "name": "공항철도 샘플 노선",
+        "color": "#2356b8"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.57,
+            37.555
+          ],
+          [
+            126.604,
+            37.543
+          ],
+          [
+            126.625,
+            37.529
+          ],
+          [
+            126.65,
+            37.515
+          ],
+          [
+            126.685,
+            37.501
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "cheongna",
+        "kind": "line",
+        "name": "도시철도 연계 샘플 노선",
+        "color": "#944bd6"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.596,
+            37.497
+          ],
+          [
+            126.616,
+            37.516
+          ],
+          [
+            126.638,
+            37.536
+          ],
+          [
+            126.661,
+            37.554
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "cheongna",
+        "kind": "station",
+        "name": "청라국제도시역",
+        "ridership": 42000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.604,
+          37.543
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "cheongna",
+        "kind": "station",
+        "name": "가정역",
+        "ridership": 31000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.65,
+          37.515
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "cheongna",
+        "kind": "station",
+        "name": "서구청역",
+        "ridership": 28000
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.676,
+          37.546
+        ]
+      }
+    }
+  ]
+}

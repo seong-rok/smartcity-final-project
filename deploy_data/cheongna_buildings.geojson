@@ -1,0 +1,1307 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 40,
+        "district": "cheongna",
+        "name": "cheongna_office_40",
+        "useType": "office",
+        "useTypeName": "업무시설",
+        "floors": 5,
+        "workers": 11674,
+        "parking": 137,
+        "totalArea": 65467,
+        "color": "#4A90D9"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.61549516118743,
+              37.54405826669772
+            ],
+            [
+              126.61312935297697,
+              37.54483581045899
+            ],
+            [
+              126.6123013997516,
+              37.54231662294052
+            ],
+            [
+              126.61466720796206,
+              37.541539079179245
+            ],
+            [
+              126.61549516118743,
+              37.54405826669772
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 41,
+        "district": "cheongna",
+        "name": "cheongna_office_41",
+        "useType": "office",
+        "useTypeName": "업무시설",
+        "floors": 13,
+        "workers": 3032,
+        "parking": 131,
+        "totalArea": 50600,
+        "color": "#4A90D9"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.6431112140519,
+              37.51631068928965
+            ],
+            [
+              126.64121791862856,
+              37.51646665709599
+            ],
+            [
+              126.64099733141786,
+              37.51378894580258
+            ],
+            [
+              126.64289062684121,
+              37.51363297799624
+            ],
+            [
+              126.6431112140519,
+              37.51631068928965
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 42,
+        "district": "cheongna",
+        "name": "cheongna_office_42",
+        "useType": "office",
+        "useTypeName": "업무시설",
+        "floors": 8,
+        "workers": 13643,
+        "parking": 137,
+        "totalArea": 13044,
+        "color": "#4A90D9"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.65421595528359,
+              37.54144924090673
+            ],
+            [
+              126.65449869142262,
+              37.54193490123431
+            ],
+            [
+              126.65247520474703,
+              37.543112911414525
+            ],
+            [
+              126.652192468608,
+              37.54262725108694
+            ],
+            [
+              126.65421595528359,
+              37.54144924090673
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 43,
+        "district": "cheongna",
+        "name": "cheongna_office_43",
+        "useType": "office",
+        "useTypeName": "업무시설",
+        "floors": 5,
+        "workers": 3769,
+        "parking": 245,
+        "totalArea": 20467,
+        "color": "#4A90D9"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.61156797337436,
+              37.538473133511566
+            ],
+            [
+              126.61087249639252,
+              37.53880416219086
+            ],
+            [
+              126.60972052303195,
+              37.536383915831216
+            ],
+            [
+              126.6104160000138,
+              37.536052887151925
+            ],
+            [
+              126.61156797337436,
+              37.538473133511566
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 44,
+        "district": "cheongna",
+        "name": "cheongna_office_44",
+        "useType": "office",
+        "useTypeName": "업무시설",
+        "floors": 8,
+        "workers": 5878,
+        "parking": 152,
+        "totalArea": 28073,
+        "color": "#4A90D9"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.61825668777057,
+              37.53822096461064
+            ],
+            [
+              126.61696615858696,
+              37.54056784892204
+            ],
+            [
+              126.61603968486743,
+              37.54005838990563
+            ],
+            [
+              126.61733021405104,
+              37.53771150559423
+            ],
+            [
+              126.61825668777057,
+              37.53822096461064
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 45,
+        "district": "cheongna",
+        "name": "cheongna_office_45",
+        "useType": "office",
+        "useTypeName": "업무시설",
+        "floors": 2,
+        "workers": 2389,
+        "parking": 143,
+        "totalArea": 43887,
+        "color": "#4A90D9"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.61316330496149,
+              37.52932332575572
+            ],
+            [
+              126.612993101585,
+              37.53081282880701
+            ],
+            [
+              126.61005931889582,
+              37.530477589668585
+            ],
+            [
+              126.6102295222723,
+              37.5289880866173
+            ],
+            [
+              126.61316330496149,
+              37.52932332575572
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 46,
+        "district": "cheongna",
+        "name": "cheongna_office_46",
+        "useType": "office",
+        "useTypeName": "업무시설",
+        "floors": 11,
+        "workers": 8879,
+        "parking": 69,
+        "totalArea": 36508,
+        "color": "#4A90D9"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.61106832057409,
+              37.50109115428805
+            ],
+            [
+              126.61194479769706,
+              37.50241345630572
+            ],
+            [
+              126.610009898342,
+              37.50369598858451
+            ],
+            [
+              126.60913342121903,
+              37.50237368656684
+            ],
+            [
+              126.61106832057409,
+              37.50109115428805
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 47,
+        "district": "cheongna",
+        "name": "cheongna_office_47",
+        "useType": "office",
+        "useTypeName": "업무시설",
+        "floors": 14,
+        "workers": 9321,
+        "parking": 110,
+        "totalArea": 25604,
+        "color": "#4A90D9"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.61937548219909,
+              37.52541295738841
+            ],
+            [
+              126.62051227241776,
+              37.52541899756094
+            ],
+            [
+              126.62050020083602,
+              37.52769092870044
+            ],
+            [
+              126.61936341061735,
+              37.52768488852791
+            ],
+            [
+              126.61937548219909,
+              37.52541295738841
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 48,
+        "district": "cheongna",
+        "name": "cheongna_commercial_48",
+        "useType": "commercial",
+        "useTypeName": "상업시설",
+        "floors": 2,
+        "workers": 1330,
+        "parking": 64,
+        "totalArea": 28391,
+        "color": "#E8734A"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.6182478939431,
+              37.49914400429156
+            ],
+            [
+              126.61944025435037,
+              37.500945793405
+            ],
+            [
+              126.61833487712653,
+              37.50167729301668
+            ],
+            [
+              126.61714251671927,
+              37.49987550390323
+            ],
+            [
+              126.6182478939431,
+              37.49914400429156
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 49,
+        "district": "cheongna",
+        "name": "cheongna_commercial_49",
+        "useType": "commercial",
+        "useTypeName": "상업시설",
+        "floors": 7,
+        "workers": 2823,
+        "parking": 48,
+        "totalArea": 18500,
+        "color": "#E8734A"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.61352646002054,
+              37.517009232421636
+            ],
+            [
+              126.61491364537372,
+              37.51759553926149
+            ],
+            [
+              126.6144312319462,
+              37.51873691574787
+            ],
+            [
+              126.61304404659302,
+              37.518150608908016
+            ],
+            [
+              126.61352646002054,
+              37.517009232421636
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 50,
+        "district": "cheongna",
+        "name": "cheongna_commercial_50",
+        "useType": "commercial",
+        "useTypeName": "상업시설",
+        "floors": 1,
+        "workers": 1344,
+        "parking": 36,
+        "totalArea": 25312,
+        "color": "#E8734A"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.64364149867009,
+              37.54247085791345
+            ],
+            [
+              126.64333561824293,
+              37.544486568899096
+            ],
+            [
+              126.64209741873773,
+              37.54429867440616
+            ],
+            [
+              126.6424032991649,
+              37.54228296342051
+            ],
+            [
+              126.64364149867009,
+              37.54247085791345
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 51,
+        "district": "cheongna",
+        "name": "cheongna_commercial_51",
+        "useType": "commercial",
+        "useTypeName": "상업시설",
+        "floors": 4,
+        "workers": 2193,
+        "parking": 60,
+        "totalArea": 26102,
+        "color": "#E8734A"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.60665788423174,
+              37.53623491946208
+            ],
+            [
+              126.60702464671196,
+              37.53821794198872
+            ],
+            [
+              126.60574079729483,
+              37.53845539153361
+            ],
+            [
+              126.6053740348146,
+              37.53647236900697
+            ],
+            [
+              126.60665788423174,
+              37.53623491946208
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 52,
+        "district": "cheongna",
+        "name": "cheongna_commercial_52",
+        "useType": "commercial",
+        "useTypeName": "상업시설",
+        "floors": 2,
+        "workers": 1062,
+        "parking": 86,
+        "totalArea": 25894,
+        "color": "#E8734A"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.64869919338497,
+              37.530629091134735
+            ],
+            [
+              126.64825657189347,
+              37.531754655104756
+            ],
+            [
+              126.64624675362765,
+              37.5309643057491
+            ],
+            [
+              126.64668937511915,
+              37.52983874177908
+            ],
+            [
+              126.64869919338497,
+              37.530629091134735
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 53,
+        "district": "cheongna",
+        "name": "cheongna_residential_53",
+        "useType": "residential",
+        "useTypeName": "주거시설",
+        "floors": 10,
+        "workers": 98,
+        "parking": 9,
+        "totalArea": 5299,
+        "color": "#50B86C"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.61451709293281,
+              37.53870411780868
+            ],
+            [
+              126.61364981362203,
+              37.538747923531844
+            ],
+            [
+              126.61361876296148,
+              37.5381331729116
+            ],
+            [
+              126.61448604227226,
+              37.538089367188434
+            ],
+            [
+              126.61451709293281,
+              37.53870411780868
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 54,
+        "district": "cheongna",
+        "name": "cheongna_residential_54",
+        "useType": "residential",
+        "useTypeName": "주거시설",
+        "floors": 7,
+        "workers": 31,
+        "parking": 18,
+        "totalArea": 44136,
+        "color": "#50B86C"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.62617705381419,
+              37.54120956387746
+            ],
+            [
+              126.62686832218316,
+              37.54302134654744
+            ],
+            [
+              126.62472328462147,
+              37.54383976513661
+            ],
+            [
+              126.6240320162525,
+              37.54202798246663
+            ],
+            [
+              126.62617705381419,
+              37.54120956387746
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 55,
+        "district": "cheongna",
+        "name": "cheongna_residential_55",
+        "useType": "residential",
+        "useTypeName": "주거시설",
+        "floors": 9,
+        "workers": 59,
+        "parking": 6,
+        "totalArea": 11875,
+        "color": "#50B86C"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.6487346615502,
+              37.53566809360005
+            ],
+            [
+              126.64938706505329,
+              37.536070391045016
+            ],
+            [
+              126.6485667612789,
+              37.53740067306079
+            ],
+            [
+              126.6479143577758,
+              37.53699837561582
+            ],
+            [
+              126.6487346615502,
+              37.53566809360005
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 56,
+        "district": "cheongna",
+        "name": "cheongna_residential_56",
+        "useType": "residential",
+        "useTypeName": "주거시설",
+        "floors": 9,
+        "workers": 71,
+        "parking": 76,
+        "totalArea": 6637,
+        "color": "#50B86C"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.6338259333361,
+              37.543696042444985
+            ],
+            [
+              126.63391498845269,
+              37.544494487884045
+            ],
+            [
+              126.63308677632715,
+              37.544586863046824
+            ],
+            [
+              126.63299772121056,
+              37.543788417607765
+            ],
+            [
+              126.6338259333361,
+              37.543696042444985
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 57,
+        "district": "cheongna",
+        "name": "cheongna_residential_57",
+        "useType": "residential",
+        "useTypeName": "주거시설",
+        "floors": 7,
+        "workers": 70,
+        "parking": 57,
+        "totalArea": 40411,
+        "color": "#50B86C"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.61578752374416,
+              37.53670007658764
+            ],
+            [
+              126.61427263800968,
+              37.53723463248212
+            ],
+            [
+              126.6134282555779,
+              37.53484172481132
+            ],
+            [
+              126.61494314131238,
+              37.53430716891685
+            ],
+            [
+              126.61578752374416,
+              37.53670007658764
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 58,
+        "district": "cheongna",
+        "name": "cheongna_residential_58",
+        "useType": "residential",
+        "useTypeName": "주거시설",
+        "floors": 5,
+        "workers": 98,
+        "parking": 99,
+        "totalArea": 19195,
+        "color": "#50B86C"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.65993169086444,
+              37.534172104679094
+            ],
+            [
+              126.66113465542298,
+              37.53535438478298
+            ],
+            [
+              126.66032998134317,
+              37.53617313695178
+            ],
+            [
+              126.65912701678462,
+              37.5349908568479
+            ],
+            [
+              126.65993169086444,
+              37.534172104679094
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 59,
+        "district": "cheongna",
+        "name": "cheongna_residential_59",
+        "useType": "residential",
+        "useTypeName": "주거시설",
+        "floors": 5,
+        "workers": 42,
+        "parking": 40,
+        "totalArea": 8159,
+        "color": "#50B86C"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.63052336312263,
+              37.528460135966064
+            ],
+            [
+              126.63126308938563,
+              37.529387806252174
+            ],
+            [
+              126.63072070749136,
+              37.529820302730464
+            ],
+            [
+              126.62998098122837,
+              37.528892632444354
+            ],
+            [
+              126.63052336312263,
+              37.528460135966064
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 60,
+        "district": "cheongna",
+        "name": "cheongna_residential_60",
+        "useType": "residential",
+        "useTypeName": "주거시설",
+        "floors": 6,
+        "workers": 69,
+        "parking": 59,
+        "totalArea": 9049,
+        "color": "#50B86C"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.60192270531263,
+              37.516002547365794
+            ],
+            [
+              126.60215579787383,
+              37.516853203044484
+            ],
+            [
+              126.60115770799541,
+              37.51712669481312
+            ],
+            [
+              126.60092461543421,
+              37.51627603913443
+            ],
+            [
+              126.60192270531263,
+              37.516002547365794
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 61,
+        "district": "cheongna",
+        "name": "cheongna_residential_61",
+        "useType": "residential",
+        "useTypeName": "주거시설",
+        "floors": 1,
+        "workers": 97,
+        "parking": 73,
+        "totalArea": 42452,
+        "color": "#50B86C"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.62387381159526,
+              37.50708492829207
+            ],
+            [
+              126.62346904028033,
+              37.50858151526719
+            ],
+            [
+              126.62080274315893,
+              37.50786038070582
+            ],
+            [
+              126.62120751447387,
+              37.506363793730706
+            ],
+            [
+              126.62387381159526,
+              37.50708492829207
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 62,
+        "district": "cheongna",
+        "name": "cheongna_residential_62",
+        "useType": "residential",
+        "useTypeName": "주거시설",
+        "floors": 9,
+        "workers": 77,
+        "parking": 28,
+        "totalArea": 75287,
+        "color": "#50B86C"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.61837705104888,
+              37.534042039242266
+            ],
+            [
+              126.61903984584063,
+              37.536590893243094
+            ],
+            [
+              126.61624908097058,
+              37.53731659366386
+            ],
+            [
+              126.61558628617883,
+              37.53476773966303
+            ],
+            [
+              126.61837705104888,
+              37.534042039242266
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 63,
+        "district": "cheongna",
+        "name": "cheongna_residential_63",
+        "useType": "residential",
+        "useTypeName": "주거시설",
+        "floors": 7,
+        "workers": 92,
+        "parking": 21,
+        "totalArea": 25016,
+        "color": "#50B86C"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.62909456562751,
+              37.510516668375764
+            ],
+            [
+              126.62822724154691,
+              37.511995148959706
+            ],
+            [
+              126.62695746234787,
+              37.51125025579821
+            ],
+            [
+              126.62782478642848,
+              37.50977177521427
+            ],
+            [
+              126.62909456562751,
+              37.510516668375764
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 64,
+        "district": "cheongna",
+        "name": "cheongna_residential_64",
+        "useType": "residential",
+        "useTypeName": "주거시설",
+        "floors": 10,
+        "workers": 72,
+        "parking": 84,
+        "totalArea": 53707,
+        "color": "#50B86C"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.65735746329311,
+              37.54470163561631
+            ],
+            [
+              126.65453094106294,
+              37.54555247314988
+            ],
+            [
+              126.65400192580772,
+              37.54379505963673
+            ],
+            [
+              126.65682844803788,
+              37.54294422210316
+            ],
+            [
+              126.65735746329311,
+              37.54470163561631
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 65,
+        "district": "cheongna",
+        "name": "cheongna_mixed_65",
+        "useType": "mixed",
+        "useTypeName": "복합시설",
+        "floors": 7,
+        "workers": 2964,
+        "parking": 97,
+        "totalArea": 8980,
+        "color": "#9B59B6"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.60055285709993,
+              37.51986094605629
+            ],
+            [
+              126.60104525920015,
+              37.52024702267783
+            ],
+            [
+              126.60015196239527,
+              37.521386333369826
+            ],
+            [
+              126.59965956029505,
+              37.52100025674829
+            ],
+            [
+              126.60055285709993,
+              37.51986094605629
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 66,
+        "district": "cheongna",
+        "name": "cheongna_mixed_66",
+        "useType": "mixed",
+        "useTypeName": "복합시설",
+        "floors": 9,
+        "workers": 358,
+        "parking": 95,
+        "totalArea": 44335,
+        "color": "#9B59B6"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.6603866430043,
+              37.51111950472697
+            ],
+            [
+              126.65788711173218,
+              37.5125461394751
+            ],
+            [
+              126.65711683479799,
+              37.51119657800695
+            ],
+            [
+              126.65961636607011,
+              37.509769943258824
+            ],
+            [
+              126.6603866430043,
+              37.51111950472697
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 67,
+        "district": "cheongna",
+        "name": "cheongna_mixed_67",
+        "useType": "mixed",
+        "useTypeName": "복합시설",
+        "floors": 5,
+        "workers": 1833,
+        "parking": 2,
+        "totalArea": 51784,
+        "color": "#9B59B6"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.61879341320034,
+              37.53025454723024
+            ],
+            [
+              126.61703590757743,
+              37.531965917542536
+            ],
+            [
+              126.61555036076373,
+              37.53044032319315
+            ],
+            [
+              126.61730786638664,
+              37.528728952880854
+            ],
+            [
+              126.61879341320034,
+              37.53025454723024
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 68,
+        "district": "cheongna",
+        "name": "cheongna_public_68",
+        "useType": "public",
+        "useTypeName": "공공시설",
+        "floors": 8,
+        "workers": 1482,
+        "parking": 32,
+        "totalArea": 13120,
+        "color": "#F1C40F"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.6393696960427,
+              37.50935905798682
+            ],
+            [
+              126.6377084224997,
+              37.50963419133263
+            ],
+            [
+              126.63758000204132,
+              37.50885878001612
+            ],
+            [
+              126.63924127558433,
+              37.50858364667031
+            ],
+            [
+              126.6393696960427,
+              37.50935905798682
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 69,
+        "district": "cheongna",
+        "name": "cheongna_public_69",
+        "useType": "public",
+        "useTypeName": "공공시설",
+        "floors": 3,
+        "workers": 687,
+        "parking": 13,
+        "totalArea": 47412,
+        "color": "#F1C40F"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.64937426750252,
+              37.50399360060689
+            ],
+            [
+              126.65126314946036,
+              37.50470418359067
+            ],
+            [
+              126.65042873393939,
+              37.506922238988665
+            ],
+            [
+              126.64853985198155,
+              37.506211656004886
+            ],
+            [
+              126.64937426750252,
+              37.50399360060689
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 70,
+        "district": "cheongna",
+        "name": "cheongna_public_70",
+        "useType": "public",
+        "useTypeName": "공공시설",
+        "floors": 4,
+        "workers": 205,
+        "parking": 75,
+        "totalArea": 53261,
+        "color": "#F1C40F"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.63603662384874,
+              37.54330549719293
+            ],
+            [
+              126.63677710692919,
+              37.545098068901794
+            ],
+            [
+              126.6342168791552,
+              37.546155658586684
+            ],
+            [
+              126.63347639607476,
+              37.54436308687782
+            ],
+            [
+              126.63603662384874,
+              37.54330549719293
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

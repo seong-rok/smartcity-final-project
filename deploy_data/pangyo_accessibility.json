@@ -1,0 +1,15 @@
+{
+  "15min": {
+    "population": 473188,
+    "workers": 219910,
+    "note": "30분 값 × 0.38 (app.js renderTabSpatial 기준)"
+  },
+  "30min": {
+    "population": 1245231,
+    "workers": 628314
+  },
+  "60min": {
+    "population": 2831552,
+    "workers": 1248912
+  }
+}

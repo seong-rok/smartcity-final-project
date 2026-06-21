@@ -1,0 +1,37 @@
+{
+  "pangyo": {
+    "name": "판교테크노밸리",
+    "population": 85231,
+    "workers": 99842,
+    "totalBuildings": 1842,
+    "officeBuildings": 829,
+    "jobsHousingRatio": 1.17,
+    "avgFloorAreaRatio": 486,
+    "totalFloorArea": 2180000,
+    "totalFloorAreaDisplay": "218만㎡",
+    "areaKm2": 6.53,
+    "officeDensity": 127
+  },
+  "cheongna": {
+    "name": "청라국제업무지구",
+    "population": 48765,
+    "workers": 28314,
+    "totalBuildings": 1156,
+    "officeBuildings": 289,
+    "jobsHousingRatio": 0.58,
+    "avgFloorAreaRatio": 218,
+    "totalFloorArea": 1240000,
+    "totalFloorAreaDisplay": "124만㎡",
+    "areaKm2": 17.81,
+    "officeDensity": 16
+  },
+  "ratio_pangyo_over_cheongna": {
+    "population": 1.75,
+    "workers": 3.53,
+    "totalBuildings": 1.59,
+    "officeBuildings": 2.87,
+    "jobsHousingRatio": 2.02,
+    "avgFloorAreaRatio": 2.23,
+    "totalFloorArea": 1.76
+  }
+}

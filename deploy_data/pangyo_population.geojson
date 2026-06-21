@@ -1,0 +1,161 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "pangyo",
+        "minutes": 15,
+        "population": 482120,
+        "workers": 218430,
+        "totalPopulation": 482120,
+        "totalWorkers": 218430
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              127.091,
+              37.416
+            ],
+            [
+              127.125,
+              37.412
+            ],
+            [
+              127.131,
+              37.392
+            ],
+            [
+              127.114,
+              37.378
+            ],
+            [
+              127.085,
+              37.384
+            ],
+            [
+              127.078,
+              37.403
+            ],
+            [
+              127.091,
+              37.416
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "pangyo",
+        "minutes": 30,
+        "population": 1245231,
+        "workers": 628314,
+        "totalPopulation": 1245231,
+        "totalWorkers": 628314
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              127.075,
+              37.431
+            ],
+            [
+              127.142,
+              37.424
+            ],
+            [
+              127.154,
+              37.383
+            ],
+            [
+              127.121,
+              37.355
+            ],
+            [
+              127.061,
+              37.367
+            ],
+            [
+              127.047,
+              37.405
+            ],
+            [
+              127.075,
+              37.431
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "pangyo",
+        "minutes": 60,
+        "population": 2831552,
+        "workers": 1248912,
+        "totalPopulation": 2831552,
+        "totalWorkers": 1248912
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              127.016,
+              37.463
+            ],
+            [
+              127.198,
+              37.454
+            ],
+            [
+              127.216,
+              37.354
+            ],
+            [
+              127.139,
+              37.292
+            ],
+            [
+              126.988,
+              37.319
+            ],
+            [
+              126.955,
+              37.407
+            ],
+            [
+              127.016,
+              37.463
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "pangyo",
+        "name": "판교테크노밸리",
+        "population": 85231,
+        "workers": 99842,
+        "totalBuildings": 1842,
+        "areaKm2": 6.53
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.108,
+          37.401
+        ]
+      }
+    }
+  ]
+}

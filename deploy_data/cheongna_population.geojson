@@ -1,0 +1,161 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "cheongna",
+        "minutes": 15,
+        "population": 128450,
+        "workers": 42800,
+        "totalPopulation": 128450,
+        "totalWorkers": 42800
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.614,
+              37.545
+            ],
+            [
+              126.664,
+              37.536
+            ],
+            [
+              126.667,
+              37.508
+            ],
+            [
+              126.631,
+              37.498
+            ],
+            [
+              126.601,
+              37.512
+            ],
+            [
+              126.6,
+              37.534
+            ],
+            [
+              126.614,
+              37.545
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "cheongna",
+        "minutes": 30,
+        "population": 432123,
+        "workers": 214532,
+        "totalPopulation": 432123,
+        "totalWorkers": 214532
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.594,
+              37.565
+            ],
+            [
+              126.693,
+              37.548
+            ],
+            [
+              126.7,
+              37.491
+            ],
+            [
+              126.627,
+              37.467
+            ],
+            [
+              126.567,
+              37.5
+            ],
+            [
+              126.564,
+              37.543
+            ],
+            [
+              126.594,
+              37.565
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "cheongna",
+        "minutes": 60,
+        "population": 1152884,
+        "workers": 518743,
+        "totalPopulation": 1152884,
+        "totalWorkers": 518743
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.509,
+              37.609
+            ],
+            [
+              126.777,
+              37.594
+            ],
+            [
+              126.805,
+              37.461
+            ],
+            [
+              126.663,
+              37.401
+            ],
+            [
+              126.466,
+              37.451
+            ],
+            [
+              126.427,
+              37.549
+            ],
+            [
+              126.509,
+              37.609
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "district": "cheongna",
+        "name": "청라국제업무지구",
+        "population": 48765,
+        "workers": 28314,
+        "totalBuildings": 1156,
+        "areaKm2": 17.81
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.635,
+          37.525
+        ]
+      }
+    }
+  ]
+}
