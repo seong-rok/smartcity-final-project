@@ -1,0 +1,852 @@
+/* ==========================================================================
+   🏢 Pangyo vs Cheongna GIS Spatial Analysis Platform Stylesheet
+   ========================================================================== */
+
+/* 1. Global Reset & Theme Variables */
+:root {
+  --bg-darker: #090d16;
+  --bg-dark: #0f172a;
+  --bg-card: #1e293b;
+  --border-color: #334155;
+  --border-light: #475569;
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  /* Cyber Blue (Pangyo) */
+  --pangyo-color: #00d2ff;
+  --pangyo-color-rgb: 0, 210, 255;
+  --pangyo-glow: rgba(0, 210, 255, 0.4);
+  
+  /* Neon Amber (Cheongna) */
+  --cheongna-color: #ff9100;
+  --cheongna-color-rgb: 255, 145, 0;
+  --cheongna-glow: rgba(255, 145, 0, 0.4);
+  
+  /* System colors */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --font-display: 'Outfit', 'Noto Sans KR', sans-serif;
+  --font-body: 'Noto Sans KR', 'Outfit', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-darker);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 2. Header Layout & Navigation */
+.app-header {
+  height: 70px;
+  background-color: var(--bg-dark);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  flex-shrink: 0;
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-icon {
+  color: var(--pangyo-color);
+  width: 28px;
+  height: 28px;
+}
+
+.app-header h1 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-header .subtitle {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  border-left: 1px solid var(--border-color);
+  padding-left: 10px;
+}
+
+.tab-navigation {
+  display: flex;
+  gap: 6px;
+  background-color: var(--bg-darker);
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-btn i {
+  width: 16px;
+  height: 16px;
+}
+
+.tab-btn:hover {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+  color: var(--bg-darker);
+  background-color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* 3. Main Dashboard Layout */
+.dashboard-container {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+  height: calc(100vh - 120px);
+}
+
+/* 4. Top KPI Cards Area */
+.kpi-section {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.kpi-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--pangyo-color), var(--cheongna-color));
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-light);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.kpi-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.kpi-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.kpi-icon {
+  width: 15px;
+  height: 15px;
+  color: var(--text-muted);
+}
+
+.kpi-values {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.kpi-val {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.kpi-val .label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.kpi-val .number {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.pangyo-val .number {
+  color: var(--pangyo-color);
+}
+
+.cheongna-val .number {
+  color: var(--cheongna-color);
+}
+
+.kpi-divider {
+  width: 1px;
+  height: 22px;
+  background-color: var(--border-color);
+}
+
+.kpi-footer-ratio {
+  margin-top: 8px;
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.kpi-footer-ratio strong {
+  font-family: var(--font-display);
+}
+
+.highlight-cyan {
+  color: var(--pangyo-color);
+}
+.cyan-text {
+  color: var(--pangyo-color);
+  font-weight: 600;
+}
+.amber-text {
+  color: var(--cheongna-color);
+  font-weight: 600;
+}
+
+/* 5. Maps Section (2-Split Maps) */
+.maps-section {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  position: relative;
+  min-height: 200px;
+}
+
+.map-wrapper {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.map-container {
+  width: 100%;
+  flex: 1;
+  background-color: #1e1e1e; /* background under the map */
+}
+
+/* Badge for district identifier overlay */
+.map-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1000;
+  background-color: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--border-color);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.badge-pangyo {
+  border-left: 3px solid var(--pangyo-color);
+}
+.badge-pangyo .badge-dot {
+  background-color: var(--pangyo-color);
+  box-shadow: 0 0 8px var(--pangyo-color);
+}
+
+.badge-cheongna {
+  border-left: 3px solid var(--cheongna-color);
+}
+.badge-cheongna .badge-dot {
+  background-color: var(--cheongna-color);
+  box-shadow: 0 0 8px var(--cheongna-color);
+}
+
+/* Map Local Controls Overlay */
+.map-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.map-ctrl-btn {
+  background-color: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  backdrop-filter: blur(8px);
+}
+
+.map-ctrl-btn:hover {
+  background-color: var(--bg-card);
+  border-color: var(--text-secondary);
+}
+
+.map-ctrl-btn i {
+  width: 16px;
+  height: 16px;
+}
+
+/* Map Sync Indicator Overlay */
+.map-sync-indicator {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background-color: rgba(16, 185, 129, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  backdrop-filter: blur(4px);
+  pointer-events: auto;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.map-sync-indicator.disabled {
+  background-color: rgba(100, 116, 139, 0.9);
+  box-shadow: 0 4px 12px rgba(100, 116, 139, 0.3);
+}
+
+.map-sync-indicator i {
+  width: 14px;
+  height: 14px;
+}
+
+/* Map Legend Overlay */
+.map-legend-overlay {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  background-color: rgba(15, 23, 42, 0.9);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.75rem;
+  width: 160px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
+}
+
+.legend-header {
+  font-weight: 700;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+  color: var(--text-secondary);
+}
+
+.legend-color-box {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.legend-color-line {
+  width: 16px;
+  height: 4px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Custom leaflet tooltip styles */
+.leaflet-tooltip-custom {
+  background-color: rgba(15, 23, 42, 0.95);
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  padding: 4px 8px !important;
+}
+
+/* 6. Bottom Panels (Charts & Details) */
+.analysis-section {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  gap: 16px;
+  height: 250px;
+  flex-shrink: 0;
+}
+
+.panel-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.panel-header {
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(15, 23, 42, 0.2);
+}
+
+.panel-header h2 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.panel-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.panel-body {
+  padding: 14px 18px;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.panel-body.scrollable {
+  overflow-y: auto;
+}
+
+/* Custom Scrollbar for scrollable panels */
+.scrollable::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollable::-webkit-scrollbar-track {
+  background: var(--bg-card);
+}
+.scrollable::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+.scrollable::-webkit-scrollbar-thumb:hover {
+  background: var(--border-light);
+}
+
+.chart-container-wrapper {
+  display: flex;
+  gap: 14px;
+  height: 100%;
+}
+
+.chart-box {
+  flex: 1;
+  position: relative;
+  height: 100%;
+  min-width: 0; /* fixes canvas overflow in flex container */
+}
+
+/* Detail panel inner content styling */
+.detail-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Table layout style for Core Comparison */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.comparison-table th, .comparison-table td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.comparison-table th {
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+.comparison-table tr:hover td {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.comparison-table td.pangyo-col {
+  color: var(--pangyo-color);
+  font-weight: 600;
+}
+
+.comparison-table td.cheongna-col {
+  color: var(--cheongna-color);
+  font-weight: 600;
+}
+
+/* Narrative style analysis paragraphs */
+.narrative-box {
+  background-color: var(--bg-darker);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.narrative-box strong {
+  color: var(--text-primary);
+}
+
+.narrative-box .narrative-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--pangyo-color);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.narrative-box.cheongna-box .narrative-title {
+  color: var(--cheongna-color);
+}
+
+/* 7. Bottom Footnote/Banner Area */
+.app-footer-banner {
+  height: 50px;
+  background-color: var(--bg-dark);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+}
+
+.summary-key-takeaway {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+.takeaway-label {
+  color: var(--warning);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.bulb-icon {
+  width: 16px;
+  height: 16px;
+  animation: pulse-glow 2s infinite alternate;
+}
+
+.takeaway-text {
+  color: var(--text-secondary);
+}
+
+.takeaway-text strong {
+  color: var(--text-primary);
+}
+
+@keyframes pulse-glow {
+  0% {
+    filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.4));
+  }
+  100% {
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.9));
+  }
+}
+
+/* 8. UI Responsive / Adaptive styling */
+@media (max-width: 1200px) {
+  .kpi-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .dashboard-container {
+    overflow-y: auto;
+    height: auto;
+  }
+  body {
+    overflow-y: auto;
+    height: auto;
+  }
+  .maps-section {
+    height: 400px;
+  }
+  .analysis-section {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+
+/* 9. GIS Dashboard Additions (Fullscreen, Analysis Info, Error Overlay) */
+.map-wrapper.fullscreen {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999 !important;
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+.map-analysis-overlay {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 1000;
+  background-color: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--border-color);
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+  border-left: 3px solid var(--pangyo-color);
+}
+
+#cheongna-wrapper .map-analysis-overlay {
+  border-left: 3px solid var(--cheongna-color);
+}
+
+.map-analysis-overlay span {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.map-error-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 23, 42, 0.95);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.map-error-overlay i {
+  color: var(--danger);
+  width: 48px;
+  height: 48px;
+}
+
+.map-error-overlay h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 4px;
+}
+
+.map-error-overlay p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  max-width: 320px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.map-error-overlay .error-btn-retry {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s;
+}
+
+.map-error-overlay .error-btn-retry:hover {
+  border-color: var(--text-secondary);
+  background-color: var(--border-color);
+}
+
+/* Loading HUD Overlay Styles */
+.map-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(9, 13, 22, 0.9);
+  z-index: 2500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  backdrop-filter: blur(6px);
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.map-loading-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.spinner-icon {
+  width: 42px;
+  height: 42px;
+  color: var(--pangyo-color);
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.loading-progress-container {
+  width: 280px;
+  height: 6px;
+  background-color: var(--border-color);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--pangyo-color), var(--cheongna-color));
+  border-radius: 3px;
+  width: 0%;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.loading-progress-percent {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+
